@@ -1,46 +1,44 @@
-
+{% load staticfiles %}
 <!DOCTYPE html>
 
 <html>
 	<head>
-
-		<link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css">
-		<link rel="stylesheet" type="text/css" href="dino.css">
-		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<script type="text/javascript" src ="dino.js"></script> 
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/dino.css' %}">
+		<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/nanumgothic.css"> -->
+		<!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+		<!-- <script type="text/javascript" src ="dino.js"></script> -->
 
 	</head>
 	<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0"> 
 		<div class="wrapper">
-			<header>
-				<div class="Menus">
-					<li>Product</li>
-					<li>Edit</li>
-					<li>Orientation</li>
-					<li>Home</li>
-				</div>
-			</header>
-			<section class="MainContents">
-				
-				<div class="ImgBox">
-					
-					<div class="img1">
-						
-						<h3 id="title">DINO,<br></h3>
-						<h3 id="contents">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse auctor semper euismod. Aliquam erat volutpat. Aenean a lorem libero. Praesent eu velit sem..</h3>
-					</div>
-					<div class="img2">
-						
-						<h3 id="title">PRACTICE,<br></h3>
-						<h3 id="contents">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a lorem libero. Praesent eu velit sem..</h3>
-					</div>
-					
-				</div>
+			<div class="top_header">
+				<h2># Co-op Blog</h2>
+			</div>
+			{%for post in posts %}
+			<div class="card">
+				<div class="card_img"><a>Add<br>ScreenShot</a></div>
 
-			</section>
-			<footer>
+				<h4>{{post.title}}</h4>
 				
-			</footer>
+				<div class="card_contents">
+					<h6>{{post.text}}</h6>
+				</div>
+				<h6>{{post.published_date}}</h6>
+			</div>
+
+			<!-- <div style="border:1px solid grey; width: 50%;height:200px; margin:0 auto;margin-top:10px;">
+				
+				<h2 style="padding:5px;">{{ post.title }}</h2>
+				<div style="border:1px dashed grey; padding:5px; margin:5%;color:#444">
+					<h6 style="padding:5px; margin:0;">{{ post.text }}</h6>
+				</div>
+				<h6 style="padding:5px;color:#444">published:{{ post.published_date }}
+				</h6>
+				<br>
+			</div> -->
+			{% endfor %}
 		</div>
 	</body>
 </html>
