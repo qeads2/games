@@ -1,18 +1,19 @@
 {% extends 'blog/base.html' %}
 	{% block content %}
-		{%for x in posts %}
 			<div class="card">
 				<div class="card_img">
 					<a>Add<br>ScreenShot</a>
 				</div>
 				<h4>
-					<a href="{% url 'post_detail' pk=post.pk %}">{{x.title}}</a>
+					<a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a>
+					{% if user.is_authenticated %}
+					<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+					{%endif%}
 				</h4>
 				<div class="card_contents">
-					<h6>{{x.text}}</h6>
+					<h6>{{post.text}}</h6>
 				</div>
-				<h6>{{x.published_date}}</h6>
+				<h6>{{post.published_date}}</h6>
 			</div>
-		{% endfor %}
 	{% endblock %}
 </html>

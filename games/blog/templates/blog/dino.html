@@ -6,7 +6,8 @@
 					<a>Add<br>ScreenShot</a>
 				</div>
 				<h4>
-					<a href="{% url 'post_detail' pk=post.pk %}">{{x.title}}</a>
+					
+					<a href="{% url 'post_detail' pk=x.pk %}">{{x.title}}</a>
 				</h4>
 				<div class="card_contents">
 					<h6>{{x.text}}</h6>

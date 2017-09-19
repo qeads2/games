@@ -1,6 +1,20 @@
 
 $(document).ready(function (){
 
+	$(window).resize(function() {
+		console.log("modi!")
+		if ($(window).width() > $(window).height()) {
+			$(".img1").css({"width":$(window).width()})
+			$(".img1").css({"height":$(window).height()})
+			$(".img1").css({'background-size':'contain'})
+		}
+		else {
+			$(".img1").css({"width":$(window).width()})
+			$(".img1").css({"height":$(window).height()})
+			$(".img1").css({'background-size':'cover'})	
+		}
+	})
+
 	$(window).scroll(function () {
 		var value = $(this).scrollTop();
 		var header = $("header")
