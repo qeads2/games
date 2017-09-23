@@ -3,14 +3,19 @@
 		{%for x in posts %}
 			<div class="card">
 				<div class="card_img">
-					<a>Add<br>ScreenShot</a>
+					<a>Add<br>ScreenShot!</a>
 				</div>
 				<h4>
 					
 					<a href="{% url 'post_detail' pk=x.pk %}">{{x.title}}</a>
 				</h4>
 				<div class="card_contents">
-					<h6>{{x.text}}</h6>
+					<h6>
+					
+						{{x.text|truncatewords:13}}
+
+
+					</h6>
 				</div>
 				<h6>{{x.published_date}}</h6>
 			</div>
