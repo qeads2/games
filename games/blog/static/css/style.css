@@ -16,13 +16,13 @@ nav {
 	padding: 0;
 }
 
-.container .main_page .background-image {
+.container .background-image {
 	background-image: url("../img/img1.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
 	max-width: 100%;
-	height: ;
+	height: 100%;
 	width: 100%;
 	display: block;
 	overflow: hidden;
