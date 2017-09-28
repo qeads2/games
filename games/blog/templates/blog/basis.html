@@ -68,12 +68,13 @@
 	</nav>
 
 	<div class="container">
-		<div class="main_page">
-			<div class="background-image"></div>
-		</div>
+		<div class="background-image"></div>
 		<div class="contents">
 			<div class="recent_con"></div>
-			<div class="newsfeed"></div>
+			<div class="newsfeed">
+					{% block newsfeed %}
+					{% endblock %}
+		</div>
 		</div>
 	</div>
 

@@ -8,7 +8,7 @@ from .forms import PostForm
 
 def post_list(request):	
     posts = Post.objects.all().order_by('-published_date')
-    return render(request, 'blog/basis.html', {'posts':posts})
+    return render(request, 'blog/newsfeed.html', {'posts':posts})
 
 def post_detail(request, pk):
 	post = get_object_or_404(Post, pk=pk)
