@@ -1,14 +1,23 @@
 {% extends "blog/basis.html" %}
-
+<!-- {% load staticfiles%} -->
 {% block newsfeed %}
 	{% for post in posts%}
-	<div class="newsfeed_post">
-		<h2>{{post.title}}</h2>
-		<img src="">
-		<div class="newsfeed_content">
-			{{post.text}}
+		{% if post.photo %}
+		<div class="newsfeed_post" style="background: url('{{ post.photo.url }}') no-repeat;background-size:cover;">
+		{% else %}
+		<div class="newsfeed_post" style="background:#333 no-repeat;background-size:cover;">
+		{% endif %}
+		<div class="opacity">
+			<h2 id="post_title">
+				{{post.title}}
+			</h2>
+			<div class="newsfeed_content">
+				{{post.text}}
+			</div>
+			<h6 style="font-size:11px;">
+				{{post.created_date}}
+			</h6>
 		</div>
 	</div>
-
 	{% endfor %}
 {% endblock %}

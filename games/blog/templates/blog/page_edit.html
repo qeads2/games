@@ -1,11 +1,21 @@
-{%extends 'blog/base.html'%}
+{%extends 'blog/basis.html'%}
 
-{%block content%}
-	<h1>New Post</h1>
-	<form method="POST" class="post-form">{%csrf_token%}
-		{{form.as_p}}
-		<button type="submit" class="save btn btn-default">Save</button>
-	</form>
-
-
+{%block modal%}
+<div class="post_new_container">
+	<div class="post_content_div">
+	  <form method="post" enctype="multipart/form-data" novalidate>{% csrf_token %}
+	    <div class="form_header">
+	    	<h2>NEW POST</h2><br>
+	    	<h5>제목</h5>
+	    	{{ form.title }}
+	    </div>
+	    <div class="form_content">
+			<h5>내용</h5>
+		    {{ form.text }}
+	    </div>
+	    <div class="form_footer">{{ form.photo }}</div>
+	    <button type="submit">Upload</button>
+	  </form>
+  </div>
+</div>
 {%endblock%}
