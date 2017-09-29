@@ -39,20 +39,70 @@ nav {
 	position: relative;
 	width:100%;
 	height: 100%;
-	background: #ffddaa;
+	background: white;
 }
+
+.new_newsfeed {
+	color: white;
+	position: relative;
+	margin:0 auto;
+	width: 75%;
+	height: 40px;
+	background:#444;
+	padding:10px;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	transition: 0.3s
+}
+.new_newsfeed:hover {
+	background:#79a6e0;
+	transition: 0.3s
+}
+
+ .new_newsfeed .plus {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: 0.3s
+	/*border:1px dashed white;*/
+} 
 
 .newsfeed .newsfeed_post {
 	position: relative;
 	margin: 0 auto;
 	width: 75%;
-	height: 200px;
-	background: white;
+	height: 300px;
 	border:1px solid grey;
 	padding: 5%;
 	border-bottom: none;
+	background-size: cover;
 }
 
-h2 {
+.opacity { 
+	position: relative;
+	margin:0 auto;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.6);
+ }
+.newsfeed_post {
+	text-align: center;
+	color:white;
+}
+#post_title {
+	padding-top: 1em;
+	padding-bottom: 2em;	
+}
+
+/*.newsfeed img {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-size: contain;
+}*/
+
+h2,h4 {
 	margin: 0;
 }
