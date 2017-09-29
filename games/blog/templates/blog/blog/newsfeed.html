@@ -1,0 +1,17 @@
+{% extends "blog/basis.html" %}
+{% load staticfiles%}
+{% block newsfeed %}
+	{% for post in posts%}
+	<div class="newsfeed_post" style="background: url('{% static 'img/img2.jpg'%}') no-repeat;background-size:cover;">
+		<div class="opacity">
+			<!-- <img src="{% static 'img/img2.jpg' %}"> -->
+			<h2 id="post_title">{{post.title}}</h2>
+			
+			<div class="newsfeed_content">
+				{{post.text}}
+			</div>
+		</div>
+	</div>
+
+	{% endfor %}
+{% endblock %}
