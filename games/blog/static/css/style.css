@@ -1,11 +1,37 @@
+@font-face {
+	font-family: "맨발의청춘";
+	src:local('맨발의청춘'), url('../font/맨발의청춘.ttf') format('truetype');
+	
+}
+@font-face {
+	font-family: "나눔고딕";
+	src:local('나눔고딕'), url('../font/나눔고딕.ttf') format('truetype');
+	
+}
+
 body,html {
 	width: 100%;
 	height: 100%;
 }
-
-nav {
-
+body {
+	padding-top:50px;
 }
+
+.navbar_header {
+	position: relative;
+	height: 200px;
+}
+.header_title{ 
+	position: relative;
+	margin:0 auto;
+	width: 180px;
+	height: 100%;
+	font-size: 2em;
+	font-family:'맨발의청춘';
+	text-align: center;
+	text-decoration: none;
+	color: white;
+ }
 
 .container {
 	position: relative;
@@ -27,6 +53,14 @@ nav {
 	display: block;
 	overflow: hidden;
 	position: relative;
+}
+
+.mainImg_title {
+	font-family: '맨발의청춘';
+	font-size: 4em;
+	color:white;
+	margin:0;
+	text-align: center;
 }
 
 .contents {
@@ -96,17 +130,19 @@ nav {
  }
 .newsfeed_post {
 	text-align: center;
+	background-position: 50% 50%;
 	color:white;
 }
 #post_title {
+	font-family: '맨발의청춘';
 	padding-top: 1em;
 }
 
 .newsfeed_content {
+	font-family: '나눔고딕';
 	margin-top: 1.5em;
 	margin-bottom: 3em;
 }
-
 /*.newsfeed img {
 	position: relative;
 	width: 100%;
