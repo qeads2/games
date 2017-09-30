@@ -37,6 +37,7 @@ nav {
 
 .newsfeed {
 	position: relative;
+	margin:0 auto;
 	width:100%;
 	height: 100%;
 	background: white;
@@ -47,13 +48,20 @@ nav {
 	position: relative;
 	margin:0 auto;
 	width: 75%;
-	height: 40px;
-	background:#444;
-	padding:10px;
+	height: 30px;
+	/*background:#444;*/
+	/*padding:10px;*/
 	text-align: center;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	transition: 0.3s
+}
+#myBtn {
+	position: relative;
+	color:black;
+	/*background:#444;*/
+	width: 100%;
+	height: 100%;
 }
 .new_newsfeed:hover {
 	background:#79a6e0;
@@ -72,9 +80,9 @@ nav {
 	position: relative;
 	margin: 0 auto;
 	width: 75%;
-	height: 300px;
+	height: 200px;
 	border:1px solid grey;
-	padding: 5%;
+	/*padding: 5%;*/
 	border-bottom: none;
 	background-size: cover;
 }
@@ -92,7 +100,11 @@ nav {
 }
 #post_title {
 	padding-top: 1em;
-	padding-bottom: 2em;	
+}
+
+.newsfeed_content {
+	margin-top: 1.5em;
+	margin-bottom: 3em;
 }
 
 /*.newsfeed img {
@@ -103,6 +115,6 @@ nav {
 	background-size: contain;
 }*/
 
-h2,h4 {
+h2,h4,h6 {
 	margin: 0;
 }
