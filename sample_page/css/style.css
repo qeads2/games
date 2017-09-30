@@ -7,6 +7,10 @@ nav {
 
 }
 
+.row {
+	padding: 15px;
+}
+
 .container {
 	position: relative;
 	max-width: 100%;
@@ -16,7 +20,7 @@ nav {
 	padding: 0;
 }
 
-.container .main_page .background-image {
+.container .main_page .background_image {
 	background-image: url(../img/background_main.jpg);
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
@@ -27,4 +31,21 @@ nav {
 	display: block;
 	overflow: hidden;
 	position: relative;
+}
+
+.container .contents .recent_con {
+	background-color: #323844;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.divider {
+	border: 0 solid #e7e6e6;
+	border-color:#ec4858;
+	border-top-width:16px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	width:100%;
+	max-width:40%;
 }
