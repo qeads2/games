@@ -3,7 +3,7 @@
 {% block newsfeed %}
 	{% for post in posts%}
 		{% if post.photo %}
-		<div class="newsfeed_post" style="background: url('{{ post.photo.url }}') no-repeat;background-size:cover;">
+		<div class="newsfeed_post" style="background: url('{{ post.photo.url }}') no-repeat;background-size:cover;background-position: 50% 50%;">
 		{% else %}
 		<div class="newsfeed_post" style="background:#333 no-repeat;background-size:cover;">
 		{% endif %}
