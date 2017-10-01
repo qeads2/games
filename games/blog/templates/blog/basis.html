@@ -61,14 +61,25 @@
 	{%  block modal %}
 		<div class="background-image">
 			<div class="opacity">
-				<h1 class="mainImg_title">제목이 없어요</h1>
+				<div class="mainImg_title_container">
+					<h1 class="mainImg_title">BRAND</h1>
+					<h3>Based on Bootstrap and coded with HTML5 and CSS3 language</h3>
+					<br>
+					<!-- <a class="btn btn-default" href="https://github.com/qeads2" role="button">NMO</a> -->
+					<img onclick="location.href='https://github.com/qeads2'" style="width:50px;"src="{% static 'img/profile1.jpg' %}" alt="..." class="img-circle">
+					&nbsp;&nbsp;&nbsp;
+					<img onclick="location.href='https://github.com/WhiteTrain'" style="width:50px;"src="{% static 'img/profile2.png' %}" alt="..." class="img-circle">
+
+				</div>
 			</div>
 		</div>
 		{% endblock %}
 	<!-- <button type="button" class="btn btn-info btn-lg" id="myBtn">Open Modal</button> -->
-
+		<div class="clear"></div>
 		<div class="contents">
+
 			<div class="recent_con"></div>
+
 			<div class="newsfeed">
 			{% if user.is_authenticated %}
 				<div class="new_newsfeed" onclick="location.href='{% url 'post_new'%}'">
