@@ -54,9 +54,9 @@
 	</nav>
 
 	<div class="container">
-
-		{% block new_post %}
-		{% endblock %}
+		<!-- 새로운 포스트를 작성할 때 page_edit.html에 연결되며, 아래 블록 태그 안의 내용들은 무시된다. -->
+		<!-- page_edit.html 시작 -->
+		{% block new_post %} 
 		<div class="background-image">
 			<div class="opacity">
 				<div class="mainImg_title_container">
@@ -69,31 +69,112 @@
 				</div>
 			</div>
 		</div>
-				<!-- 페이지 스크롤을 내렸을 때부터 시작되는 내용 -->
+
+		<!-- 페이지 스크롤을 내렸을 때부터 시작되는 내용 -->
 
 		<div class="contents">
+			<!-- 카테고리별 최근 게시물 -->
+
+			<div class="recent_con">
+				<!-- 페이지 스크롤을 내렸을 때부터 시작되는 내용 -->
+				<div class="contents">
 					<!-- 카테고리별 최근 게시물 -->
+					<div class="recent_con">
+						<div class="divider"></div>
+						<!-- carousel과 tumbnail을 이용한 최근 게시글 목록 -->
+						<div class="row">
+							<div id="carousel_recent" class="carousel slide" data-ride="carousel">
+								<!-- Indicators -->
+								<ol class="carousel-indicators">
+									<li data-target="#carousel_recent" data-slide-to="0" class="active"></li>
+									<li data-target="#carousel_recent" data-slide-to="1"></li>
+									<li data-target="#carousel_recent" data-slide-to="2"></li>
+								</ol>
 
-			<div class="recent_con"></div>
-			<div class="newsfeed">
-				<!--  관리자 계정으로 로그인한 유저만 볼 수 있음 -->
-				{% if user.is_authenticated %} 
-				<div class="new_newsfeed" onclick="location.href='{% url 'post_new'%}'">
-					<button type="button" class="btn btn-default" id="myBtn">
-						<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-					</button>
+								<!-- Wrapper for slides -->
+								<div class="carousel-inner" role="listbox">
+									<div class="item active">
+										<div class="col-sm-4 col-md-3">
+											<div class="thumbnail">
+												<img src="./img/example1.jpg" alt="100%x200">
+												<div class="caption">
+													<h3>Thumbnail label</h3>
+													<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+													<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+												</div>
+											</div>
+										</div>
+										<div class="carousel-caption">
+											...
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="col-sm-4 col-md-3">
+											<div class="thumbnail">
+												<div class="thumbnail_img"></div>
+												<div class="caption">
+													<h3>Thumbnail label</h3>
+													<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+													<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+												</div>
+											</div>
+										</div>
+										<div class="carousel-caption">
+											...
+										</div>
+									</div>
+
+									<div class="item">
+										<div class="col-sm-4 col-md-3">
+											<div class="thumbnail">
+												<img src="./img/example3.jpg" alt="100%x200">
+												<div class="caption">
+													<h3>Thumbnail label</h3>
+													<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+													<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+												</div>
+											</div>
+										</div>
+										<div class="carousel-caption">
+											...
+										</div>
+									</div>
+								</div>
+
+								<!-- Controls -->
+								<a class="left carousel-control" href="#carousel_recent" role="button" data-slide="prev">
+									<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+									<span class="sr-only">Previous</span>
+								</a>
+								<a class="right carousel-control" href="#carousel_recent" role="button" data-slide="next">
+									<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+									<span class="sr-only">Next</span>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
-				{% endif %}
-				<!-- newsfeed.html 시작 -->
-				{% block newsfeed %}
-				{% endblock %}
+				<div class="newsfeed">
+					<!--  관리자 계정으로 로그인한 유저만 볼 수 있음 -->
+					{% if user.is_authenticated %} 
+					<div class="new_newsfeed" onclick="location.href='{% url 'post_new'%}'">
+						<button type="button" class="btn btn-default" id="myBtn">
+							<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						</button>
+					</div>
+					{% endif %}
+					<!-- newsfeed.html 시작 -->
+					{% block newsfeed %}
+					<!-- newsfeed.html 끝 -->
+					{% endblock %}
+				</div>
+				<!-- newsfeed div에 적용된 float:right 해제 -->
+				<div class="clear"></div>
 			</div>
-			<!-- newsfeed div에 적용된 float:right 해제 -->
-			<div class="clear"></div>
+				 <!-- page_edit.html 끝 -->
+				{% endblock %}
 		</div>
-
-	</div>
-
-	<footer></footer>
-</body>
-</html>
+		<footer></footer>
+	</body>
+	</html>

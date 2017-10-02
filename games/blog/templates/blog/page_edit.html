@@ -3,8 +3,9 @@
 {% block new_post %}
 <div class="post_new_container">
 	<div class="post_content_div">
-		<form method="post" enctype="multipart/form-data" novalidate>{% csrf_token %}
+		<form method="post" action="{% url 'post_edit' pk=post.pk %}" enctype="multipart/form-data" novalidate>{% csrf_token %}
 			<div class="form_header">
+			        
 				<h2>NEW POST</h2><br>
 				<h5>제목</h5>
 				{{ form.title }}
@@ -15,6 +16,7 @@
 			</div>
 			<div class="form_footer">{{ form.photo }}</div>
 			<button type="submit">Upload</button>
+
 		</form>
 	</div>
 </div>
