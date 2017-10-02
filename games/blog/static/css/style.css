@@ -3,11 +3,6 @@
 	src:local('Typo_SsangmunDongB'), url('../font/Typo_SsangmunDongB.ttf') format('truetype');
 	
 }
-@font-face {
-	font-family: "Typo_SsangmunDongB";
-	src:local('Typo_SsangmunDongB'), url('../font/Typo_SsangmunDongB.ttf') format('truetype');
-	
-}
 
 body,html {
 	width: 100%;
@@ -31,7 +26,7 @@ body {
 	text-align: center;
 	text-decoration: none;
 	color: white;
- }
+}
 
 .container {
 	position: relative;
@@ -57,7 +52,6 @@ body {
 }
 .mainImg_title_container {
 	font-family: 'Typo_SsangmunDongB';
-	/*background: rgba(0,0,0,0.5);*/
 	padding: 5%;
 	color:white;
 	text-align: center;
@@ -79,7 +73,7 @@ body {
 .contents {
 	position: relative;
 	width: 100%;
-	height: 200%;
+	height: auto;
 	background: #1f1f1f;
 }
 
@@ -94,19 +88,15 @@ body {
 
 .new_newsfeed {
 	color: white;
-	position: relative;
 	margin:0 auto;
 	width: 100%;
 	height: 30px;
-	/*background:#444;*/
-	/*padding:10px;*/
 	text-align: center;
 	transition: 0.3s
 }
 #myBtn {
 	position: relative;
 	color:black;
-	/*background:#444;*/
 	width: 100%;
 	height: 100%;
 }
@@ -115,12 +105,10 @@ body {
 	transition: 0.3s
 }
 
- .new_newsfeed .plus {
+.new_newsfeed .plus {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	transition: 0.3s
-	/*border:1px dashed white;*/
 } 
 
 .newsfeed .newsfeed_post {
@@ -133,7 +121,6 @@ body {
 	text-align: center;
 	background-position: 50% 50%;
 	color:white;
-	/*margin-right: 10px;*/
 }
 
 .opacity { 
@@ -142,7 +129,7 @@ body {
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,0.6);
- }
+}
 
 #post_title {
 	font-family: 'Typo_SsangmunDongB';
@@ -156,13 +143,6 @@ body {
 	margin-top: 1.5em;
 	margin-bottom: 3em;
 }
-/*.newsfeed img {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	background-size: contain;
-}*/
 
 .clear {
 	clear:both;
