@@ -1,11 +1,11 @@
 {% extends "blog/basis.html" %}
 <!-- {% load staticfiles%} -->
 {% block newsfeed %}
-	{% for post in posts%}
-		{% if post.photo %}
-		<div class="newsfeed_post" style="background: url('{{ post.photo.url }}') no-repeat;background-size:cover;background-position: 50% 50%;">
-		{% else %}
-		<div class="newsfeed_post" style="background:#333 no-repeat;background-size:cover;">
+{% for post in posts%}
+{% if post.photo %}
+<div class="newsfeed_post" style="background: url('{{ post.photo.url }}') no-repeat;background-size:cover;background-position: 50% 50%;">
+	{% else %}
+	<div class="newsfeed_post" style="background:#333 no-repeat;background-size:cover;">
 		{% endif %}
 		<div class="opacity">
 			<h2 id="post_title">
@@ -20,4 +20,4 @@
 		</div>
 	</div>
 	{% endfor %}
-{% endblock %}
+	{% endblock %}
