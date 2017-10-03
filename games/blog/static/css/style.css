@@ -1,11 +1,6 @@
 @font-face {
-	font-family: "맨발의청춘";
-	src:local('맨발의청춘'), url('../font/맨발의청춘.ttf') format('truetype');
-	
-}
-@font-face {
-	font-family: "나눔고딕";
-	src:local('나눔고딕'), url('../font/나눔고딕.ttf') format('truetype');
+	font-family: "Typo_SsangmunDongB";
+	src:local('Typo_SsangmunDongB'), url('../font/Typo_SsangmunDongB.ttf') format('truetype');
 	
 }
 
@@ -15,6 +10,9 @@ body,html {
 }
 body {
 	padding-top:50px;
+}
+.row {
+	padding: 15px;
 }
 
 .navbar_header {
@@ -27,11 +25,11 @@ body {
 	width: 180px;
 	height: 100%;
 	font-size: 2em;
-	font-family:'맨발의청춘';
+	font-family:'Typo_SsangmunDongB';
 	text-align: center;
 	text-decoration: none;
 	color: white;
- }
+}
 
 .container {
 	position: relative;
@@ -40,10 +38,11 @@ body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
+	overflow: auto;
 }
 
 .container .background-image {
-	background-image: url("../img/img1.jpg");
+	background-image: url("../img/background_main.jpg");
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -55,45 +54,108 @@ body {
 	position: relative;
 }
 
-.mainImg_title {
-	font-family: '맨발의청춘';
-	font-size: 4em;
+.container .contents .recent_con {
+	position: relative;
+	background-color: #323844;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.divider {
+	border: 0 solid #e7e6e6;
+	border-color:#ec4858;
+	border-top-width:16px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+	width:100%;
+	max-width:40%;
+}
+
+#carousel_recent .carousel-inner .thumbnail .thumbnail_img {
+	background-image: url(../img/example1.jpg);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-width: 100%;
+	height: 250px;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.mainImg_title_container {
+	font-family: 'Typo_SsangmunDongB';
+	padding: 5%;
 	color:white;
-	margin:0;
 	text-align: center;
+	position: relative;
+	top:30%;
+	margin:0 auto;
+	width:100%;
+	height: auto;
+}
+.mainImg_title {
+	font-family: 'Typo_SsangmunDongB';
+	position: relative;
+	color:#00f3ff;
+	font-size: 4em;
+	margin:0;
+	padding-bottom: 10px;
 }
 
 .contents {
+
 	position: relative;
 	width: 100%;
 	height: auto;
+	background: #1f1f1f;
+	transition: 0.5s;
+	overflow:hidden;
+}
+
+.category_container {
+	position: absolute;
+	float:left;
+	width:28%;
+	height: 100%;
+	margin-left: 1%;	
+	margin-right: 1%;
+	background: #999;
+}
+
+.category {
+	/*position: relative;*/
+	margin:0 auto;
+	width: 95%;
+	height: auto;
+	background:white;
+
+
 }
 
 .newsfeed {
 	position: relative;
-	margin:0 auto;
-	width:100%;
-	height: 100%;
+	float:right;
+	width:70%;
+	height: auto;
 	background: white;
+	margin-left: 1%;	
+	margin-right: 1%;	
 }
 
 .new_newsfeed {
 	color: white;
-	position: relative;
 	margin:0 auto;
-	width: 75%;
+	width: 100%;
 	height: 30px;
-	/*background:#444;*/
-	/*padding:10px;*/
 	text-align: center;
-	margin-top: 5px;
-	margin-bottom: 5px;
 	transition: 0.3s
 }
 #myBtn {
 	position: relative;
 	color:black;
-	/*background:#444;*/
 	width: 100%;
 	height: 100%;
 }
@@ -102,23 +164,22 @@ body {
 	transition: 0.3s
 }
 
- .new_newsfeed .plus {
+.new_newsfeed .plus {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	transition: 0.3s
-	/*border:1px dashed white;*/
 } 
 
 .newsfeed .newsfeed_post {
 	position: relative;
-	margin: 0 auto;
-	width: 75%;
+	width: 100%;
 	height: 200px;
 	border:1px solid grey;
-	/*padding: 5%;*/
 	border-bottom: none;
 	background-size: cover;
+	text-align: center;
+	background-position: 50% 50%;
+	color:white;
 }
 
 .opacity { 
@@ -127,30 +188,39 @@ body {
 	width: 100%;
 	height: 100%;
 	background: rgba(0,0,0,0.6);
- }
-.newsfeed_post {
-	text-align: center;
-	background-position: 50% 50%;
-	color:white;
+	transition: 0.3s
 }
+.newsfeed_post > .opacity:hover { 
+	background: rgba(0,0,0,0.2);
+	transition: 0.3s
+}
+
+.remove { /*뉴스피드 삭제 버튼*/
+	position: relative;
+	float:right;
+	background:rgba(255,255,255,0);
+	border:none;
+	padding:10px;
+	padding-bottom: 0px;
+}
+
 #post_title {
-	font-family: '맨발의청춘';
+	font-family: 'Typo_SsangmunDongB';
 	padding-top: 1em;
 }
 
 .newsfeed_content {
-	font-family: '나눔고딕';
+	position: relative;
+	margin:0 auto;
+	width:80%;
 	margin-top: 1.5em;
 	margin-bottom: 3em;
 }
-/*.newsfeed img {
-	position: relative;
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
-	background-size: contain;
-}*/
 
-h2,h4,h6 {
+.clear {
+	clear:both;
+}
+
+h2,h4,h6,h3 {
 	margin: 0;
 }
