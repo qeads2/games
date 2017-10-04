@@ -1,19 +1,18 @@
-{% extends 'blog/base.html' %}
-	{% block content %}
-			<div class="card">
-				<div class="card_img">
-					<a>Add<br>ScreenShot</a>
-				</div>
-				<h4>
-					<a href="{% url 'post_detail' pk=post.pk %}">{{post.title}}</a>
-					{% if user.is_authenticated %}
-					<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-					{%endif%}
-				</h4>
-				<div class="card_contents">
-					<h6>{{post.text}}</h6>
-				</div>
-				<h6>{{post.published_date}}</h6>
-			</div>
-	{% endblock %}
+{% extends 'blog/basis.html' %}
+{% block post_detail %}
+<div class="post_detail">
+	<div class="post_detail_header" style="background: url('{{ post.photo.url }}') no-repeat;background-size: cover;background-position: 50% 50%;">
+		<div class="opacity">
+			<h2>{{post.title}}</h2><br>
+			<h6>{{post.created_date}} / {{post.author}}</h6>
+		</div>
+			
+
+	</div>
+	<div class="post_detail_content">
+		<h3>{{post.text}}</h3>
+	</div>
+
+</div>
+{% endblock %}
 </html>
