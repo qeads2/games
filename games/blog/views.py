@@ -13,8 +13,9 @@ def post_list(request):
     return render(request, 'blog/newsfeed.html', {'posts':posts})
 
 def post_detail(request, pk):
-	post = get_object_or_404(Post, pk=pk)
-	return render(request, 'blog/post_detail.html',{'post':post})
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'blog/post_detail.html',{'post':post})    
+	
 
 def post_delete(request, pk):
     q = Post.objects.get(pk=pk)
@@ -36,7 +37,7 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('blog/page_edit.html')
+            return redirect('post_list')
     else :
         form = PostForm()
 

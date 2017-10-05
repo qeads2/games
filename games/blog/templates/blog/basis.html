@@ -29,6 +29,7 @@
 	<![endif]-->
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/post_new.css' %}"> 
+	<link rel="stylesheet" href="{% static 'css/post_detail.css' %}"> 
 	<!-- django에서 css를 불러오려면.. -->
 	<script type="text/javascript" src="{% static 'js/nav.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/scroll.js' %}"> </script>
@@ -56,6 +57,7 @@
 		<div class="container">
 			<!-- 새로운 포스트를 작성할 때 page_edit.html에 연결되며, 아래 블록 태그 안의 내용들은 무시된다. -->
 			<!-- page_edit.html 시작 -->
+			{% block post_detail %}
 			{% block new_post %} 
 			<div class="background-image">
 				<div class="opacity">
@@ -170,6 +172,8 @@
 				<div class="clear"></div>
 			</div>
 			<!-- page_edit.html 끝 -->
+			{% endblock %}
+			<!-- post_detail.html 끝 -->
 			{% endblock %}
 		</div>
 		<footer></footer>
