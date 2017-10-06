@@ -13,6 +13,16 @@ class PostForm(forms.ModelForm):
 		self.fields['text'].widget.attrs.update({'data-provide':'markdown'})
 		self.fields['title'].widget.attrs.update({'placeholder':'제목을 입력해주세요.'})
 
+class SearchForm(forms.ModelForm):
+	class Meta:
+		model = Post
+		fields = ('title',)
+
+	def __init__(self, *args,**kwargs) :
+		super(SearchForm,self).__init__(*args, **kwargs)
+		self.fields['title'].widget.attrs.update({'placeholder''제목을 검색하세요.'})
+
+
 class DeleteForm(forms.Form):
 	class Meta:
 		model = Post

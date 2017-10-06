@@ -3,15 +3,21 @@ from django.shortcuts import redirect
 from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Post
-from .forms import PostForm
+from .forms import PostForm, SearchForm
 from django.http import HttpResponseRedirect
 from .forms import DeleteForm
 from django.conf import settings
+from django.http import JsonResponse
 # Create your views here.
 
 def post_list(request):	
     posts = Post.objects.all().order_by('-created_date')
     return render(request, 'blog/newsfeed.html', {'posts':posts})
+
+def post_search(request):
+    title = request.GET.get('title',None)
+    data = { 'result' : Post.objects.get(title=keyword) }
+    return JsonResponse(data)
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -45,9 +51,8 @@ def post_new(request):
 
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
-    
     if (request.method == "POST"):
-        if (post.photo != request.FILES['photo']) :
+        if (request.FILES.get('photo') != None) :
             post.photo.delete()
         form = PostForm(request.POST,request.FILES,instance=post)
         if form.is_valid():
