@@ -12,7 +12,7 @@
 	margin:0 auto;
 	text-align: center;
 	width: 80%;
-	height: 80%;
+	height: auto;
 	background: white;
 	border: 1px solid grey;
 	box-shadow: 9px 6px 10px 0px black;
@@ -28,10 +28,17 @@
 	text-align: center;
 	margin-bottom: 10px;
 }
-
+.form_footer *{
+	height: auto;
+}
 .form_header input {width: 100%;}
 .form_content textarea {position: relative;width: 100%;resize: none;}
-.form_footer input {position: relative;margin:0 auto;width: 100%;}
+
+/*.form_footer * {position: relative;width: auto;float:left;margin:2px;}*/
+
+#photo-clear_id {
+	margin:2px;
+}
 
 .form_header h2,h5 {
 	text-align: left;
