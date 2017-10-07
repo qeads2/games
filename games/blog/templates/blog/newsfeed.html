@@ -18,6 +18,7 @@
 			{% endif %}
 			<h2 id="post_title"  onclick="location.href='{% url 'post_detail' pk=post.pk %}'">
 				{{post.title}}
+				<h2>{{search_result}}</h2>
 
 			</h2>
 			<div class="newsfeed_content">
