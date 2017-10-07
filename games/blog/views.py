@@ -15,9 +15,12 @@ def post_list(request):
     return render(request, 'blog/newsfeed.html', {'posts':posts})
 
 def post_search(request):
-    title = request.GET.get('title',None)
-    data = { 'result' : Post.objects.get(title=keyword) }
-    return JsonResponse(data)
+    if request.method == 'POST' :
+        keyword = request.POST['keyword']
+        return JsonResponse({'success':'OK'})
+
+    return JsonResponse({'success':'..?'})
+    #return render(request, 'blog/newsfeed.html', {'keyword':keyword})
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
