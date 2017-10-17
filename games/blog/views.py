@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 from .forms import DeleteForm
 from django.conf import settings
 from django.http import JsonResponse
-# Create your views here.
+from django.shortcuts import render_to_response
 
 def post_list(request):	
     posts = Post.objects.all().order_by('-created_date')
@@ -17,9 +17,13 @@ def post_list(request):
 def post_search(request):
     if request.method == 'POST' :
         keyword = request.POST['keyword']
-        return JsonResponse({'success':'OK'})
+        q = Post.objects.filter(title__contains=keyword)
 
-    return JsonResponse({'success':'..?'})
+        return render_to_response('blog/newsfeed.html', {'posts':q})
+    else :
+        q = Post.objects.all()
+    return render(request, 'blog/newsfeed.html',{'posts':q})    
+    # return JsonResponse({'success':'..?'})
     #return render(request, 'blog/newsfeed.html', {'keyword':keyword})
 
 def post_detail(request, pk):
@@ -34,7 +38,6 @@ def post_delete(request, pk):
         return HttpResponseRedirect('/')
     else :
         return render(request, 'blog/newsfeed.html', {'form':form})
-    # return render(request, 'blog/newsfeed.html',{'q':q})
 
 
 def post_new(request):
