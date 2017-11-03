@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	imageSlider("#imageSlider1",2);
+	imageSlider("#thumbnail_slider",2);
 });
 
 function imageSlider(selector,  index){
@@ -13,9 +13,9 @@ function imageSlider(selector,  index){
 	function init(){
 		$imageSlider = $(selector);
 		$imageContainer = $imageSlider.find(".image-container");
-		imageWidth = $imageSlider.find(".image-list").innerWidth();
-
-		imageLength = $imageSlider.find(".image-list .image-container img").length;
+		imageWidth = $imageSlider.find(".thumbnail-list").innerWidth();
+		imageSize = $imageSlider.find(".image-list .image-container img").innerWidth();
+		imageLength = $imageSlider.find(".thumbnail-list .thumbnail-container .thumbnail").length;
 		currentIndex = index;
 
 		$indexItems = $imageSlider.find(".index-nav li a");
@@ -31,7 +31,7 @@ function imageSlider(selector,  index){
 			index = 0;
 
 		console.log( index, currentIndex, "imageLength "+imageLength);
-		var pos= -(index*imageWidth);
+		var pos= -(index*imageSize); // slider안의 img 크기에 맞게 이동되도록 설정
 
 
 		if(direction=="prev" || direction=="next") {
